@@ -1,27 +1,47 @@
-var uuid = require('uuid/v4');
-var reservations = require("../data/resData");
+
+var friends = require("../data/friends.js");
 
 module.exports = function(app) {
 
   // Get ALL tables/reservations
-  app.get('/api/tables', function(req, res) {
+  app.get('/api/friends', function(req, res) {
   
-    return res.json(reservations);
+    return res.json(friends);
 
   });
 
   // POST a new reserveration
-  app.post('/api/tables/new', function(req, res) {
+  app.post('/api/friends', function(req, res) {
 
-    var newRes = req.body;
+    var bestMatch = {
+name:"",
+photo:"",
+friendDifference: 1000
 
-    newRes.id = uuid();
+    };
 
-    console.log(newRes);
+    var userData = req.body;
+    var userScore = userData.scores;
 
-    reservations.push(newRes);
+    var totalDifference = 0;
+     
+    for (var i=0; i<friends.length; i++){
 
-    res.json(newRes);
+      console.log(friends[i]);
+      totalDifference=0;
+
+      for (var j = 0; j<friends[i].scores[j];j++){
+        totalDifference += Math.abs(parseInt(userScores[j])) - parseInt(friends[i].scores);
+        if (totalDifference<=bestMatch.friendDifference){
+          bestMatch.name = friends[i].name;
+          bestMatch.photo =friends[i].photo;
+          bestMatch.friendDifference = totalDifference;
+        }
+      }
+    }
+friends.push(userData);
+res.json(bestMatch);
+    
 
   });
 
