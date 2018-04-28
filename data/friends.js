@@ -1,9 +1,9 @@
 
 
-module.exports = [
+var friends = [
   {
-    name: 'Superman',
-    photo: 'https://www.google.com/search?q=superhero&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjYwMzFjtjaAhVGyoMKHXDqDWcQ_AUICigB&biw=1440&bih=738#imgrc=X13JCsSyLcp-LM:',
+    name: 'Rosato',
+    photo: 'https://i.pinimg.com/564x/46/29/f0/4629f07d47a67ddb31ccc8648780f203.jpg',
     scores: [
       "4",
     "3",
@@ -18,8 +18,8 @@ module.exports = [
     ]
   },
 {
-  name: 'Alex',
-    photo: 'https://www.google.com/search?q=superhero&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjYwMzFjtjaAhVGyoMKHXDqDWcQ_AUICigB&biw=1440&bih=738#imgdii=urPfoNn92YhkZM:&imgrc=dTgcVeANdHD8EM:',
+  name: 'Henri Jayer Richebourg Grand Cru 1978 - Côte de Nuits, France',
+    photo: 'https://i.pinimg.com/564x/b2/e4/8f/b2e48ff0c0a62cc5ee22913e2b3c50b9.jpg',
     scores: [
       "2",
     "2",
@@ -35,8 +35,8 @@ module.exports = [
   },
 
   {
-    name: 'Spiderman',
-      photo: 'https://www.google.com/search?q=superhero&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjYwMzFjtjaAhVGyoMKHXDqDWcQ_AUICigB&biw=1440&bih=738#imgrc=CJYxDMqOoSNTNM:',
+    name: 'Cherry on Top',
+      photo: 'https://i.pinimg.com/564x/f1/1b/63/f11b631f59e06fe03d92bfb1b3d252bd.jpg',
       scores: [
         "2",
       "3",
@@ -52,8 +52,8 @@ module.exports = [
     },
 
     {
-      name: 'Batman',
-        photo: 'https://www.google.com/search?q=superhero&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjYwMzFjtjaAhVGyoMKHXDqDWcQ_AUICigB&biw=1440&bih=738#imgrc=YPjRgpj4GV0x3M:',
+      name: 'M&M',
+        photo: 'https://i.pinimg.com/564x/46/dc/6d/46dc6d2623d9bf8ff8ffb7cac9e555e9.jpg',
         scores: [
           "2",
         "3",
@@ -69,3 +69,4 @@ module.exports = [
       }  
   
 ];
+module.exports = friends;
