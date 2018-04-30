@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
 
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <title>Friend-Finder Survey</title>
@@ -51,7 +51,7 @@
         </h4>
         <h5>What's Up?</h5>
         <select data-placeholder="" class="chosen-select" id="q1">
-          <option value=""></option>
+          <default value="1">1</default>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -65,7 +65,7 @@
         </h4>
         <h5>What's Up?</h5>
         <select data-placeholder="" class="chosen-select" id="q2">
-          <option value=""></option>
+            <default value="1">1</default>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -79,7 +79,7 @@
         </h4>
         <h5>What's Up?</h5>
         <select data-placeholder="" class="chosen-select" id="q3">
-          <option value=""></option>
+            <default value="1">1</default>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -93,7 +93,7 @@
         </h4>
         <h5>What's Up?</h5>
         <select data-placeholder="" class="chosen-select" id="q4">
-          <option value=""></option>
+            <default value="1">1</default>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -106,7 +106,7 @@
         </h4>
         <h5>What's Up?</h5>
         <select data-placeholder="" class="chosen-select" id="q5">
-          <option value=""></option>
+            <default value="1">1</default>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -120,7 +120,7 @@
         </h4>
         <h5>What's Up?</h5>
         <select data-placeholder="" class="chosen-select" id="q6">
-          <option value=""></option>
+            <default value="1">1</default>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -134,7 +134,7 @@
         </h4>
         <h5>What's Up?</h5>
         <select data-placeholder="" class="chosen-select" id="q7">
-          <option value=""></option>
+            <default value="1">1</default>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -148,7 +148,7 @@
         </h4>
         <h5>What's Up?</h5>
         <select data-placeholder="" class="chosen-select" id="q8">
-          <option value=""></option>
+            <default value="1">1</default>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -161,7 +161,7 @@
         </h4>
         <h5>What's Up?</h5>
         <select data-placeholder="" class="chosen-select" id="q9">
-          <option value=""></option>
+            <default value="1">1</default>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -175,7 +175,7 @@
         </h4>
         <h5>What's Up?</h5>
         <select data-placeholder="" class="chosen-select" id="q10">
-          <option value=""></option>
+            <default value="1">1</default>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -186,37 +186,40 @@
 
         <br>
 
-        <button id="submit" class="btn btn-dark btn-lg btn-block mt-4">Submit</button>
+        <button type="button" class="btn btn-dark btn-lg btn-block mt-4" id="submit" data-toggle="modal" data-target="#resultsModal">
+            Submit
+          </button>
+
 
       </div>
     </div>
     <br>
     <br>
 
-  
-  <!-- Modal -->
-  <div class="modal fade" id="resultsModal" >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="matchName"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            
-          </button>
-        </div>
-        <div class="modal-body">
-          <img id="matchImg" src=''>.
-        </div>
-        <div class="modal-footer">
-          
-            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-          </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="resultsModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="matchName">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <div class="modal-body">
+          <img id="matchImg" src="https://i.pinimg.com/564x/b2/e4/8f/b2e48ff0c0a62cc5ee22913e2b3c50b9.jpg">
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
     </div>
   </div>
+</div>
 
   <script type="text/javascript">
-
 
     $("#submit").on("click", function () {
       function validateForm() {
@@ -247,13 +250,16 @@
           photo: $("#photo").val(),
           scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
         }
+
+      
         // Grab the URL of the website
       var currentURL = window.location.origin;
       // AJAX post the data to the friends API. 
       $.post(currentURL + "/api/friends", userData, function(data) {
+        console.log(data)
         // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-        $("#matchName").text(data.name);
-        $('#matchImg').attr("src", data.photo);
+        $("#matchName").text(name);
+        $("#matchImg").attr("src",photo);
         // Show the modal with the best match 
         $("#resultsModal").modal('toggle');
       });
@@ -263,8 +269,14 @@
 
     return false;
   });
+  
    
   </script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
 
 </body>
 

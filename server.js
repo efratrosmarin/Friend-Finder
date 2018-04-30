@@ -1,33 +1,32 @@
-// Import dependencies
+// Dependencies
+// ===========================================================
 var express = require("express");
-var bodyparser = require("body-parser");
+var bodyParser = require("body-parser");
 var path = require("path");
-// initialize our server
-var app = express();
 
-// Define port
+// Sets up the Express App
+// =============================================================
+var app = express();
 var PORT = process.env.PORT || 3000;
 
-// Set up middleware (body-parser)
-app.use(bodyparser.urlencoded({extended: true}));
-app.use(bodyparser.json());
+app.use(express.static(__dirname + '/public'));
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text({type: 'text/html'}));
+app.use(bodyParser.json({ type: 'application/*+json'}));
+app.use(bodyParser.raw({type: 'application/vnd.custom-type'}))
 
-// // parse various different custom JSON types as JSON
-// app.use(bodyParser.json({ type: 'application/*+json' }))
- 
-// // parse some custom thing into a Buffer
-// app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }))
- 
-// // parse an HTML body into a string
-// app.use(bodyParser.text({ type: 'text/html' }))
+// Routes
+// =============================================================
 
-// Set up routes
+// Get routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 
-// Turn on server
+
+// Starts the server to begin listening
+// =============================================================
 app.listen(PORT, function() {
-  console.log("Server running on port: " + PORT);
-});
+  console.log("App listening on PORT " + PORT);
+  });
